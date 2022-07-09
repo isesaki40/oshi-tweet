@@ -10,6 +10,7 @@ export const Result = () => {
       <Title>あなたの推しツイートした回数は</Title>
         <Count>{oshi_count}回</Count>
     </div>
+    /*aaaaaaaaaa*/
   ) 
 }
 
