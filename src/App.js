@@ -1,8 +1,14 @@
 import "./App.css";
+import { Form } from "./components/Form";
 import { Result } from "./components/Result";
 
 function App() {
-  return <Result />;
+  return (
+    <div>
+      <Form />
+      <Result />
+    </div>
+  );
 }
 
 export default App;
