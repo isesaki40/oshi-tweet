@@ -1,6 +1,28 @@
-import { getQueriesForElement } from "@testing-library/react";
 import React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
+import { getTest } from "../apis/getTest";
+import { getSearch } from "../apis/getSearch";
+
+const test = async () => {
+  try {
+    const res = await getTest();
+    console.log(res);
+  } catch (e) {
+    console.error("Error: ", e);
+  }
+};
+
+const search = async () => {
+  try {
+    const res = await getSearch("(apple OR iphone) ipad");
+    console.log(res);
+  } catch (e) {
+    console.error("Error: ", e);
+  }
+};
+
+test();
+search();
 
 /*const redirectToTwitter = () => {*/
   /*window.location.href = "https://twitter.com/ " + "{props.arg1}";*/

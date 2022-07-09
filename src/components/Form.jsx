@@ -1,13 +1,8 @@
 import React from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 export const Form = () => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, watch } = useForm();
   const onSubmit = (data) => console.log("onSubmit:", data);
   console.log("watch:", watch("example")); // watchは引数に渡した名前の入力値を監視する
   /*
