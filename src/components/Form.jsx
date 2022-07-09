@@ -14,13 +14,23 @@ export const Form = () => {
     /* handleSubmitはフォームの入力を確かめたうえで、引数に渡した関数(onSubmit)を呼び出す */
     <form onSubmit={handleSubmit(onSubmit)}>
       {/* register関数の呼び出しにより、フォーム入力の要素を引数の名前で登録する */}
-      <input defaultValue="test" {...register("example")} />
-      {/* register関数の第2引数には、HTML標準フォームデータ検証のルールが渡せる */}
-      <input {...register("exampleRequired", { required: true })} />
-      {/* データ検証に失敗するとerrorsが返され、登録した名前で取り出せる */}
-      {errors.exampleRequired && (
-        <span style={{ color: "red" }}>This field is required</span>
-      )}
+      <label>
+        OshiName
+        <input defaultValue="test" {...register("example")} />
+      </label>
+      <br></br>
+      <label>
+        FirstDate
+        <input type="date" {...register("firstDate", { valueAsDate: true })} />
+        {/* 始めの日付 */}
+      </label>
+      <br></br>
+      <label>
+        LastDate
+        <input type="date" {...register("lastDate", { valueAsDate: true })} />
+        {/* 終わりの日付 */}
+      </label>
+      <br></br>
       <input type="submit" />
     </form>
   );
