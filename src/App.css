@@ -37,8 +37,8 @@
   }
 }
 
-body {
-  background-color: aqua;
+.bkcolor{
+  background-color: #00ffff;
 }
 
 
@@ -198,6 +198,32 @@ animation-iteration-count: 2;/*この数字を必要回数分に変更*/
   margin-right: 1%;
  }
 
+.text100{
+  font-size: 52px;
+  font-weight: bold;
+  margin-top: 36px;
+  margin-left: 32px;
+  margin-right: 1%;
+  position: absolute;/*絶対配置*/
+  
+  top: 0;
+  left: 0;
+
+}
+
+.text1000{
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 39px;
+  margin-left: 18px;
+  
+  position: absolute;/*絶対配置*/
+  
+  top: 0;
+  left: 0;
+
+}
+
 .inline-block_id {
   display: inline-block;      /* インラインブロック要素にする */
   width: 500px;
@@ -239,6 +265,10 @@ animation-iteration-count: 2;/*この数字を必要回数分に変更*/
               
 }
 
+.ajs{
+  height: 1000px;
+}
+
 
 
 img.example1 {
@@ -258,6 +288,7 @@ a.btn--orange {
   width: 200px;
   height: 50px;
   margin-top: 1px;
+  
   transition: background .15s ease,
               color .15s ease;
 }
@@ -444,14 +475,11 @@ button.btn {
     }
   }
 
-  .box{
-    width: 0px;
-    padding: 0px;
-    margin:0px 0px 0px 0px;
-    background: #666;
-    color: #fff;
-    box-sizing:border-box;
+  .example1{
+    position: relative;/*相対配置*/
   }
+
+ 
   
 
  
