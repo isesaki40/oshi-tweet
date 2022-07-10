@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { getSearchCount } from "../apis/getSearchCount";
+import { getImgUrl } from "../apis/getImg";
 
 export const Form = (props) => {
   const { register, handleSubmit, watch } = useForm();
@@ -11,9 +12,22 @@ export const Form = (props) => {
     const searchCount = async (input) => {
       try {
         const count = await getSearchCount(
-          `from:${input.oshiId} ${input.key1}`
+          `from:${input.userId} ${input.key1} ${input.key2} ${input.key3} ${input.key4} ${input.key5}`
         );
-        props.handleCountState(count);
+        const img = await getImgUrl(input.oshiId);
+        const user = await getImgUrl(input.userId);
+
+        console.log(user);
+        // props.handleCountState(count);
+        input = {
+          ...input,
+          count: count.meta.total_tweet_count,
+          oshiName: input.oshiName,
+          id: input.oshiId,
+          img: img.data.profile_image_url,
+          keys: [input.key1, input.key2, input.key3, input.key4, input.key5],
+          user: user.data.name,
+        };
         props.handleFormState(input);
         navigate("../result", { replace: true });
       } catch (e) {
@@ -45,62 +59,125 @@ export const Form = (props) => {
       >
         <div
           style={{
-          height: "70%",
-          width: "30%",
-          "border": "0.2em solid #6eaef4",
-          "background-color": "#9DCEEA",
-          "opcity":"0.26",
-          "border-radius":"0.6em",
-          "display":"block",
-          "margin-top":"auto",
-        }}
-        align="center"
-      >
+            height: "70%",
+            width: "30%",
+            border: "0.2em solid #6eaef4",
+            "background-color": "#9DCEEA",
+            opcity: "0.26",
+            "border-radius": "0.6em",
+            display: "block",
+            "margin-top": "auto",
+          }}
+          align="center"
+        >
           <br></br>
           推し活度をチェックする
           <br></br>
-          <div style={{"display":"flex","justify-content":"flex-end","margin-right":"100px",}}>
-            <p style={{"margin-right":"40px",}}>UserID</p>
-            <input defaultValue="" placeholder="@watashihoge" {...register("UserName")} />
+          <div
+            style={{
+              display: "flex",
+              "justify-content": "flex-end",
+              "margin-right": "100px",
+            }}
+          >
+            <p style={{ "margin-right": "40px" }}>UserID</p>
+            <input
+              defaultValue=""
+              placeholder="@watashihoge"
+              {...register("userId")}
+            />
           </div>
-          <div style={{"display":"flex","justify-content":"flex-end","margin-right":"100px",}}>
-            <p style={{"margin-right":"40px",}}>OshiID</p>
-            <input defaultValue="" placeholder="@Oshihoge" {...register("oshiId")}/>
+          <div
+            style={{
+              display: "flex",
+              "justify-content": "flex-end",
+              "margin-right": "100px",
+            }}
+          >
+            <p style={{ "margin-right": "40px" }}>OshiID</p>
+            <input
+              defaultValue=""
+              placeholder="@Oshihoge"
+              {...register("oshiId")}
+            />
           </div>
-          <div style={{"display":"flex","justify-content":"flex-end","margin-right":"100px",}}>
-            <p style={{"margin-right":"40px",}}>Oshi</p>
-            <input defaultValue="" placeholder="oshihuge" {...register("oshiName")} />
+          <div
+            style={{
+              display: "flex",
+              "justify-content": "flex-end",
+              "margin-right": "100px",
+            }}
+          >
+            <p style={{ "margin-right": "40px" }}>Oshi</p>
+            <input
+              defaultValue=""
+              placeholder="oshihuge"
+              {...register("oshiName")}
+            />
           </div>
-          <div style={{"display":"flex","justify-content":"flex-end","margin-right":"100px",}}>
-           <p style={{"margin-right":"40px",}}>Key1</p>
-            <input defaultValue="" placeholder="hoge1" {...register("key1")}/>
+          <div
+            style={{
+              display: "flex",
+              "justify-content": "flex-end",
+              "margin-right": "100px",
+            }}
+          >
+            <p style={{ "margin-right": "40px" }}>Key1</p>
+            <input defaultValue="" placeholder="hoge1" {...register("key1")} />
           </div>
-          <div style={{"display":"flex","justify-content":"flex-end","margin-right":"100px",}}>
-            <p style={{"margin-right":"40px",}}>Key2</p>
-            <input defaultValue="" placeholder="hoge2" {...register("key2")}/>
+          <div
+            style={{
+              display: "flex",
+              "justify-content": "flex-end",
+              "margin-right": "100px",
+            }}
+          >
+            <p style={{ "margin-right": "40px" }}>Key2</p>
+            <input defaultValue="" placeholder="hoge2" {...register("key2")} />
           </div>
-          <div style={{"display":"flex","justify-content":"flex-end","margin-right":"100px",}}>
-            <p style={{"margin-right":"40px",}}>Key3</p>
-            <input defaultValue="" placeholder="hoge3" {...register("key3")}/>
+          <div
+            style={{
+              display: "flex",
+              "justify-content": "flex-end",
+              "margin-right": "100px",
+            }}
+          >
+            <p style={{ "margin-right": "40px" }}>Key3</p>
+            <input defaultValue="" placeholder="hoge3" {...register("key3")} />
           </div>
-          <div style={{"display":"flex","justify-content":"flex-end","margin-right":"100px",}}>
-            <p style={{"margin-right":"40px",}}>Key4</p>
-            <input defaultValue="" placeholder="hoge4" {...register("key4")}/>
+          <div
+            style={{
+              display: "flex",
+              "justify-content": "flex-end",
+              "margin-right": "100px",
+            }}
+          >
+            <p style={{ "margin-right": "40px" }}>Key4</p>
+            <input defaultValue="" placeholder="hoge4" {...register("key4")} />
           </div>
-          <div style={{"display":"flex","justify-content":"flex-end","margin-right":"100px",}}>
-            <p style={{"margin-right":"40px",}}>Key5</p>
-            <input defaultValue="" placeholder="hoge5" {...register("key5")}/>
+          <div
+            style={{
+              display: "flex",
+              "justify-content": "flex-end",
+              "margin-right": "100px",
+            }}
+          >
+            <p style={{ "margin-right": "40px" }}>Key5</p>
+            <input defaultValue="" placeholder="hoge5" {...register("key5")} />
           </div>
-          <input type="submit" value="check" style={{
-            "height":"30px",
-            "width":"160px",
-            "margin-top":"2em",
-            "color": "white",
-            "display": "flex",
-            "background-color":"blue",
-            "justify-content": "center",
-            "position": "relative",
-            "border-radius":"0.3em",
+          <input
+            type="submit"
+            value="check"
+            style={{
+              height: "30px",
+              width: "160px",
+              "margin-top": "2em",
+              color: "white",
+              display: "flex",
+              "background-color": "blue",
+              "justify-content": "center",
+              position: "relative",
+              "border-radius": "0.3em",
             }}
           />
           <br></br>

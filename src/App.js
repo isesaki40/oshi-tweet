@@ -13,6 +13,7 @@ function App() {
     id: "hogehoge",
     user: "ふが",
     userId: "fugafuga",
+    keys: ["key1", "key2", "key3", "key4", "key5"],
   };
 
   const [state, setState] = useState(initialState);
@@ -24,31 +25,29 @@ function App() {
           path="/"
           element={
             <Form
-              // register={register}
-              // handleSubmit={handleSubmit}
-              // watch={watch}
               handleFormState={(data) => {
                 setState({
                   ...state,
-                  // count: data.count,
-                  // img: data.img,
+                  count: data.count,
+                  img: data.img,
                   oshiName: data.oshiName,
                   id: data.id,
-                  // user: data.user,
+                  user: data.user,
                   userId: data.userId,
+                  keys: data.keys,
                 });
               }}
-              handleCountState={(count) => {
-                setState({
-                  ...state,
-                  count: count.meta.total_tweet_count,
-                  // img: data.img,
-                  // oshiName: data.oshiName,
-                  // id: data.id,
-                  // user: data.user,
-                  // userId: data.userId,
-                });
-              }}
+              // handleCountState={(count) => {
+              //   setState({
+              //     ...state,
+              //     count: count.meta.total_tweet_count,
+              //     // img: data.img,
+              //     // oshiName: data.oshiName,
+              //     // id: data.id,
+              //     // user: data.user,
+              //     // userId: data.userId,
+              //   });
+              // }}
             />
           }
         />

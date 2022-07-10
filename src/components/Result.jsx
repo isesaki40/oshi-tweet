@@ -17,10 +17,10 @@ import styled from "styled-components";
 /*window.location.href = "https://twitter.com/ " + "{props.arg1}";*/
 
 export const Result = (props) => {
-  const countHund=Math.floor(props.count/100);
-  const countSrpl=props.count%100;
-  return(
-    <div >
+  const countHund = Math.floor(props.count / 100);
+  const countSrpl = props.count % 100;
+  return (
+    <div>
       <div class="inline-block_test">
         <div className="Headline">
           <div class="title">あなたの推しツイートした回数は</div>
@@ -46,49 +46,49 @@ export const Result = (props) => {
       <div className="inline-block_coin">
         {/* <div class="flexbox flexbox-right"> */}
         <div class="box flipLeft1">
-          <div className="image_cut_first"></div>
+          <ImgFirst img={props.data.img} />
         </div>
         <div class="box flipLeft5">
-          <div className="image_cut"></div>
+          <ImgCut img={props.data.img} />
         </div>
         <div class="box flipLeft9">
-          <div className="image_cut_last"></div>
+          <ImgLast img={props.data.img} />
         </div>
       </div>
 
       <div className="inline-block_coin_second">
         {/* <div class="flexbox flexbox-right"> */}
         <div class="box flipLeft2">
-          <div className="image_cut_first"></div>
+          <ImgFirst img={props.data.img} />
         </div>
         <div class="box flipLeft6">
-          <div className="image_cut"></div>
+          <ImgCut img={props.data.img} />
         </div>
         <div class="box flipLeft10">
-          <div className="image_cut_last"></div>
+          <ImgLast img={props.data.img} />
         </div>
       </div>
 
       <div className="inline-block_coin_second">
         {/* <div class="flexbox flexbox-right"> */}
         <div class="box flipLeft3">
-          <div className="image_cut_first"></div>
+          <ImgFirst img={props.data.img} />
         </div>
         <div class="box flipLeft7">
-          <div className="image_cut"></div>
+          <ImgCut img={props.data.img} />
         </div>
         <div class="box flipLeft11">
-          <div className="image_cut_last"></div>
+          <ImgLast img={props.data.img} />
         </div>
       </div>
 
       <div className="inline-block_coin_second">
         {/* <div class="flexbox flexbox-right"> */}
         <div class="box flipLeft4">
-          <div className="image_cut_first"></div>
+          <ImgFirst img={props.data.img} />
         </div>
         <div class="box flipLeft8">
-          <div className="image_cut"></div>
+          <ImgCut img={props.data.img} />
         </div>
         {/* <div class="box flipLeft11"><div className="image_cut_last"></div> */}
 
@@ -104,7 +104,12 @@ export const Result = (props) => {
         </div>
       </div>
 
-      <div class="kiyword">検索推しワード：</div>
+      <div class="kiyword">
+        検索推しワード：
+        {props.data.keys.map((key) => (
+          <p>{key}</p>
+        ))}
+      </div>
 
       <div className="inline-block_btn">
         <a href="" class="btn btn--orange btn--radius ">
@@ -121,41 +126,80 @@ export const Result = (props) => {
   );
 };
 
-const Button = styled.button`
-  /* Adapt the colors based on primary prop */
-  background: ${(props) => (props.primary ? "palevioletred" : "white")};
-  color: ${(props) => (props.primary ? "white" : "palevioletred")};
+// const Button = styled.button`
+//   /* Adapt the colors based on primary prop */
+//   background: ${(props) => (props.primary ? "palevioletred" : "white")};
+//   color: ${(props) => (props.primary ? "white" : "palevioletred")};
 
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: 2px solid palevioletred;
-  border-radius: 3px;
+//   font-size: 1em;
+//   margin: 1em;
+//   padding: 0.25em 1em;
+//   border: 2px solid palevioletred;
+//   border-radius: 3px;
+// `;
+
+// const Count = styled.h1`
+//   font-size: 5em;
+//   text-align: center;
+//   padding:-top: 0.5em;
+// `;
+
+// const Title = styled.h1`
+//   font-size: 1.5em;
+//   text-align: center;
+//   padding-top: 0.3em;
+// `;
+
+// const Name = styled.h2`
+//   text-align: center;
+//   font-size: 2em;
+//   padding-top: 0.9em;
+// `;
+
+// const User = styled.h2`
+//   letter-spacing: 0.1em;
+//   float: right;
+//   font-size: 1.5em;
+//   padding: 2em 0em 0em 0em;
+// `;
+
+const ImgCut = styled.div`
+  width: 150px;
+  height: 150px;
+  /* padding: 5px; */
+  border-radius: 50%;
+  margin-right: 1px;
+  margin-left: 2px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-position: center;
+  ${(props) => `background-image: url(${props.img})`};
 `;
 
-const Count = styled.h1`
-  font-size: 5em;
-  text-align: center;
-  padding:-top: 0.5em;
+const ImgFirst = styled.div`
+  width: 150px;
+  height: 150px;
+  /* padding: 5px; */
+  border-radius: 50%;
+  margin-right: 1px;
+  margin-left: 4px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  background-position: center;
+  ${(props) => `background-image: url(${props.img})`};
 `;
 
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  padding-top: 0.3em;
-`;
-
-const Name = styled.h2`
-  text-align: center;
-  font-size: 2em;
-  padding-top: 0.9em;
-`;
-
-const User = styled.h2`
-  letter-spacing: 0.1em;
-  float: right;
-  font-size: 1.5em;
-  padding: 2em 0em 0em 0em;
+const ImgLast = styled.div`
+  width: 150px;
+  height: 150px;
+  /* padding: 5px; */
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-left: 3px;
+  margin-top: 3px;
+  margin-bottom: 1px;
+  background-position: center;
+  ${(props) => `background-image: url(${props.img})`};
 `;
 
 export default Result;
