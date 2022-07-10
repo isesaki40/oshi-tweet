@@ -17,8 +17,10 @@ import styled from "styled-components";
 /*window.location.href = "https://twitter.com/ " + "{props.arg1}";*/
 
 export const Result = (props) => {
-  return (
-    <div>
+  const countHund=Math.floor(props.count/100);
+  const countSrpl=props.count%100;
+  return(
+    <div >
       <div class="inline-block_test">
         <div className="Headline">
           <div class="title">あなたの推しツイートした回数は</div>
