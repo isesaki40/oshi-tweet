@@ -3,12 +3,13 @@ import { Form } from "./components/Form";
 import { Result } from "./components/Result";
 import image from  "./components/image/test.png";
 
+
 function App() {
   return (
     <div>
-      <Form />
+      <Form /> 
       <Result
-        count={4}
+        count={1050}
         img={image}
         name={`ほげ`}
         id={'hogehoge'}
