@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 // import { getTest } from "../apis/getTest";
 
@@ -18,8 +17,8 @@ import styled from "styled-components";
 /*window.location.href = "https://twitter.com/ " + "{props.arg1}";*/
 
 export const Result = (props) => {
-  const countHund = Math.floor(props.count / 100);
-  const countSrpl = props.count % 100;
+  const countHund = Math.floor(props.count / 10);
+  const countSrpl = props.count % 10;
   return (
     <div class="bkcolor">
       <div class="inline-block_test">
@@ -46,62 +45,84 @@ export const Result = (props) => {
 
       <div className="inline-block_coin">
         {/* <div class="flexbox flexbox-right"> */}
+        {countHund>=1 && 
         <div class="box flipLeft1">
           <ImgFirst img={props.data.img} />
-          <p class="text100">100</p>
+          <p class="text100">10</p>
         </div>
+        }
+        {countHund>=5 && 
         <div class="box flipLeft5">
           <ImgCut img={props.data.img} />
-          <p class="text100">500</p>
+          <p class="text100">50</p>
         </div>
+        }
+        {countHund>=9 && 
         <div class="box flipLeft9">
           <ImgLast img={props.data.img} />
-          <p class="text100">900</p>
+          <p class="text100">90</p>
         </div>
+        }
       </div>
 
       <div className="inline-block_coin_second">
         {/* <div class="flexbox flexbox-right"> */}
+        {countHund>=2 && 
         <div class="box flipLeft2">
           <ImgFirst img={props.data.img} />
-          <p class="text100">200</p>
+          <p class="text100">20</p>
         </div>
+        }
+        {countHund>=6 && 
         <div class="box flipLeft6">
           <ImgCut img={props.data.img} />
-          <p class="text100">600</p>
+          <p class="text100">60</p>
         </div>
+        }
+        {countHund>=10 && 
         <div class="box flipLeft10">
           <ImgLast img={props.data.img} />
-          <p class="text1000">1000</p>
+          <p class="text1000">100</p>
         </div>
+        }
       </div>
 
       <div className="inline-block_coin_second">
         {/* <div class="flexbox flexbox-right"> */}
+        {countHund>=3 && 
         <div class="box flipLeft3">
           <ImgFirst img={props.data.img} />
-          <p class="text100">300</p>
+          <p class="text100">30</p>
         </div>
+        }
+        {countHund>=7 && 
         <div class="box flipLeft7">
           <ImgCut img={props.data.img} />
-          <p class="text100">700</p>
+          <p class="text100">70</p>
         </div>
+        }
+        {countHund>=11 && 
         <div class="box flipLeft11">
           <ImgLast img={props.data.img} />
-          <p class="text1000">1050</p>
+          <p class="text1000">110</p>
         </div>
+        }
       </div>
 
       <div className="inline-block_coin_second">
         {/* <div class="flexbox flexbox-right"> */}
+        {countHund>=4 && 
         <div class="box flipLeft4">
           <ImgFirst img={props.data.img} />
-          <p class="text100">400</p>
+          <p class="text100">40</p>
         </div>
+        }
+        {countHund>=8 && 
         <div class="box flipLeft8">
           <ImgCut img={props.data.img} />
-          <p class="text100">800</p>
+          <p class="text100">80</p>
         </div>
+        }
         {/* <div class="box flipLeft11"><div className="image_cut_last"></div> */}
 
         {/* </div> */}
@@ -125,9 +146,9 @@ export const Result = (props) => {
 
       <div class="ajs">
         <div className="inline-block_btn">
-          <Link to="/" className="btn btn--orange btn--radius">
+          <a href="" class="btn btn--orange btn--radius ">
             前のページへ
-          </Link>
+          </a>
         </div>
 
         <div className="inline-block_by">
