@@ -18,8 +18,8 @@ import styled from "styled-components";
 /*window.location.href = "https://twitter.com/ " + "{props.arg1}";*/
 
 export const Result = (props) => {
-  const countHund = Math.floor(props.count / 10);
-  const countSrpl = props.count % 10;
+  const countHund = Math.floor(props.data.count / 10);
+  const countSrpl = props.data.count % 10;
   return (
     <div class="bkcolor">
       <div class="inline-block_test">
