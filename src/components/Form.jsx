@@ -11,7 +11,7 @@ export const Form = (props) => {
     const searchCount = async (input) => {
       try {
         const count = await getSearchCount(
-          `from:${input.oshiId} ${input.key1}`
+          `from:${input.username} ${input.oshiId}  ${input.oshiname} ${input.key1} ${input.key2} ${input.key3} ${input.key3} ${input.key4} ${input.key5}`
         );
         props.handleCountState(count);
         props.handleFormState(input);
@@ -74,9 +74,9 @@ export const Form = (props) => {
 
             </div>
             <div style={{"display":"flex","flex-direction":"column","flex-wrap":"nowrap","margin-top":"20px","width":"270px",}}>
-              <input defaultValue="" placeholder="@watashihoge" {...register("UserName")} style={{"border":"1px solid #EEEEEE","border-radius":"4px","height":"50px","margin-top":"2px",}}/>
+              <input defaultValue="" placeholder="@watashihoge" {...register("username")} style={{"border":"1px solid #EEEEEE","border-radius":"4px","height":"50px","margin-top":"2px",}}/>
               <input defaultValue="" placeholder="@Oshihoge" {...register("oshiid")} style={{"border":"1px solid #EEEEEE","border-radius":"4px","height":"50px","margin-top":"2px",}}/>
-              <input defaultValue="" placeholder="oshihuge" {...register("oshiName")} style={{"border":"1px solid #EEEEEE","border-radius":"4px","height":"50px","margin-top":"2px",}}/>
+              <input defaultValue="" placeholder="oshihuge" {...register("oshiname")} style={{"border":"1px solid #EEEEEE","border-radius":"4px","height":"50px","margin-top":"2px",}}/>
               <input defaultValue="" placeholder="hoge1" {...register("key1")} style={{"border":"1px solid #EEEEEE","border-radius":"4px","height":"50px","margin-top":"2px",}}/>
               <input defaultValue="" placeholder="hoge2" {...register("key2")} style={{"border":"1px solid #EEEEEE","border-radius":"4px","height":"50px","margin-top":"2px",}}/>
               <input defaultValue="" placeholder="hoge3" {...register("key3")} style={{"border":"1px solid #EEEEEE","border-radius":"4px","height":"50px","margin-top":"2px",}}/>
