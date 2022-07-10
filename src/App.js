@@ -1,21 +1,29 @@
 import "./App.css";
 import { Form } from "./components/Form";
 import { Result } from "./components/Result";
-import image from  "./components/image/test.png";
+import image from "./components/image/test.png";
+import { Route, Routes } from "react-router-dom";
 
 
 function App() {
   return (
     <div>
-      <Form /> 
-      <Result
-        count={1050}
-        img={image}
-        name={`ほげ`}
-        id={'hogehoge'}
-        user={'ふが'}
-        userid={'hugahuga'}
-      />
+      <Routes>
+        <Route path="/" element={<Form />} />
+        <Route
+          path="result"
+          element={
+            <Result
+              count={4}
+              img={image}
+              name={`ほげ`}
+              id={"hogehoge"}
+              user={"ふが"}
+              userid={"hugahuga"}
+            />
+          }
+        />
+      </Routes>
     </div>
   );
 }

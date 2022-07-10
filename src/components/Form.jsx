@@ -17,25 +17,47 @@ export const Form = () => {
     /* handleSubmitはフォームの入力を確かめたうえで、引数に渡した関数(onSubmit)を呼び出す */
     <form onSubmit={handleSubmit(onSubmit)}>
       {/* register関数の呼び出しにより、フォーム入力の要素を引数の名前で登録する */}
-      <div style={{'height':'15em','background-color': '#00FF00', 'font-family': 'ＭＳ ゴシック'}} align='center'>
+      <div
+        style={{
+          height: "15em",
+          "background-color": "#00FF00",
+          "font-family": "ＭＳ ゴシック",
+        }}
+        align="center"
+      >
         <br></br>
-        推しの名前　
+        推しの名前
         <br></br>
-        <input defaultValue=""　placeholder="木村　拓也" {...register("oshiName")} />
+        <input
+          defaultValue=""
+          placeholder="木村　拓也"
+          {...register("oshiName")}
+        />
         <br></br>
         <br></br>
         検索期間
         <br></br>
-        <table> 
+        <table>
           <tr>
-            <th align='left'>from:</th>
-            <th><input type="date" {...register("firstDate", { valueAsDate: true })} /></th>
+            <th align="left">from:</th>
+            <th>
+              <input
+                type="date"
+                {...register("firstDate", { valueAsDate: true })}
+              />
+            </th>
             {/* 始めの日付 */}
           </tr>
           <tr></tr>
           <tr>
-            <th align='left'>to:</th>
-            <th><input type="date"　id='today' {...register("lastDate", { valueAsDate: true })} /></th>
+            <th align="left">to:</th>
+            <th>
+              <input
+                type="date"
+                id="today"
+                {...register("lastDate", { valueAsDate: true })}
+              />
+            </th>
             {/* 終わりの日付 */}
           </tr>
           <br></br>
