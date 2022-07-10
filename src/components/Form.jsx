@@ -1,10 +1,28 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { getSearchCount } from "../apis/getSearchCount";
 
-export const Form = () => {
+export const Form = (props) => {
   const { register, handleSubmit, watch } = useForm();
-  const onSubmit = (data) => console.log("onSubmit:", data);
-  console.log("watch:", watch("example")); // watchは引数に渡した名前の入力値を監視する
+
+  let navigate = useNavigate();
+  const onSubmit = (input) => {
+    const searchCount = async (input) => {
+      try {
+        const count = await getSearchCount(
+          `from:${input.oshiId} ${input.key1}`
+        );
+        props.handleCountState(count);
+        props.handleFormState(input);
+        navigate("../result", { replace: true });
+      } catch (e) {
+        console.error("Error: ", e);
+      }
+    };
+    searchCount(input);
+  };
+  console.log("watch:", watch("oshiName")); // watchは引数に渡した名前の入力値を監視する
   /*
   var date = new Date();
   var yyyy = date.getFullYear();
@@ -47,7 +65,7 @@ export const Form = () => {
           </div>
           <div style={{"display":"flex","justify-content":"flex-end","margin-right":"100px",}}>
             <p style={{"margin-right":"40px",}}>OshiID</p>
-            <input defaultValue="" placeholder="@Oshihoge" {...register("oshiid")}/>
+            <input defaultValue="" placeholder="@Oshihoge" {...register("oshiId")}/>
           </div>
           <div style={{"display":"flex","justify-content":"flex-end","margin-right":"100px",}}>
             <p style={{"margin-right":"40px",}}>Oshi</p>
