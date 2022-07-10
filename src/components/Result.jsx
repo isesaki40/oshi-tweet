@@ -16,12 +16,11 @@ import styled from "styled-components";
 /*const redirectToTwitter = () => {*/
 /*window.location.href = "https://twitter.com/ " + "{props.arg1}";*/
 
-
 export const Result = (props) => {
-  const countHund=Math.floor(props.count/100);
-  const countSrpl=props.count%100;
-  return(
-    <div class="bkcolor" >
+  const countHund = Math.floor(props.count / 100);
+  const countSrpl = props.count % 100;
+  return (
+    <div class="bkcolor">
       <div class="inline-block_test">
         <div className="Headline">
           <div class="title">あなたの推しツイートした回数は</div>
@@ -35,7 +34,7 @@ export const Result = (props) => {
       </div>
 
       <div></div>
-      
+
       <div className="inline-block_id">
         <div class="imgplt">
           <div className="Headline">
@@ -45,46 +44,67 @@ export const Result = (props) => {
       </div>
 
       <div className="inline-block_coin">
-      {/* <div class="flexbox flexbox-right"> */}
-      <div class="box flipLeft1"><ImgFirst img={props.data.img} /><p class="text100">100</p></div>
-      <div class="box flipLeft5"><ImgCut img={props.data.img} /><p class="text100">500</p></div></div>
-      <div class="box flipLeft9"><ImgLast img={props.data.img} /><p class="text100">900</p></div>
-    
-      </div>
-      </div>
-
-      <div className="inline-block_coin_second">
-      {/* <div class="flexbox flexbox-right"> */}
-      <div class="box flipLeft2"><ImgFirst img={props.data.img} /><p class="text100">200</p></div>
-      <div class="box flipLeft6"><ImgCut img={props.data.img} /><p class="text100">600</p></div>
-      <div class="box flipLeft10"><ImgLast img={props.data.img} /><p class="text1000">1000</p></div>
-      
-
-       
-      </div>
+        {/* <div class="flexbox flexbox-right"> */}
+        <div class="box flipLeft1">
+          <ImgFirst img={props.data.img} />
+          <p class="text100">100</p>
+        </div>
+        <div class="box flipLeft5">
+          <ImgCut img={props.data.img} />
+          <p class="text100">500</p>
+        </div>
+        <div class="box flipLeft9">
+          <ImgLast img={props.data.img} />
+          <p class="text100">900</p>
+        </div>
       </div>
 
       <div className="inline-block_coin_second">
-      {/* <div class="flexbox flexbox-right"> */}
-      <div class="box flipLeft3"><ImgFirst img={props.data.img} /><p class="text100">300</p></div>
-      <div class="box flipLeft7"><ImgCut img={props.data.img} /><p class="text100">700</p></div>
-      <div class="box flipLeft11"><ImgLast img={props.data.img} /><p class="text1000">1050</p></div>
-
-       
-      </div>
+        {/* <div class="flexbox flexbox-right"> */}
+        <div class="box flipLeft2">
+          <ImgFirst img={props.data.img} />
+          <p class="text100">200</p>
+        </div>
+        <div class="box flipLeft6">
+          <ImgCut img={props.data.img} />
+          <p class="text100">600</p>
+        </div>
+        <div class="box flipLeft10">
+          <ImgLast img={props.data.img} />
+          <p class="text1000">1000</p>
+        </div>
       </div>
 
       <div className="inline-block_coin_second">
-      {/* <div class="flexbox flexbox-right"> */}
-      <div class="box flipLeft4"><ImgFirst img={props.data.img} /><p class="text100">400</p></div>
-      <div class="box flipLeft8"><ImgCut img={props.data.img} /><p class="text100">800</p></div>
-      {/* <div class="box flipLeft11"><div className="image_cut_last"></div> */}
-
-       
-      {/* </div> */}
+        {/* <div class="flexbox flexbox-right"> */}
+        <div class="box flipLeft3">
+          <ImgFirst img={props.data.img} />
+          <p class="text100">300</p>
+        </div>
+        <div class="box flipLeft7">
+          <ImgCut img={props.data.img} />
+          <p class="text100">700</p>
+        </div>
+        <div class="box flipLeft11">
+          <ImgLast img={props.data.img} />
+          <p class="text1000">1050</p>
+        </div>
       </div>
 
-      
+      <div className="inline-block_coin_second">
+        {/* <div class="flexbox flexbox-right"> */}
+        <div class="box flipLeft4">
+          <ImgFirst img={props.data.img} />
+          <p class="text100">400</p>
+        </div>
+        <div class="box flipLeft8">
+          <ImgCut img={props.data.img} />
+          <p class="text100">800</p>
+        </div>
+        {/* <div class="box flipLeft11"><div className="image_cut_last"></div> */}
+
+        {/* </div> */}
+      </div>
 
       <div></div>
 
@@ -103,18 +123,18 @@ export const Result = (props) => {
       </div>
 
       <div class="ajs">
-      <div className="inline-block_btn">
-        <a href="" class="btn btn--orange btn--radius ">
-          前のページへ
-        </a>
-      </div>
+        <div className="inline-block_btn">
+          <a href="" class="btn btn--orange btn--radius ">
+            前のページへ
+          </a>
+        </div>
 
-      <div className="inline-block_by">
-        <div className="idplt_by">
-          by{props.data.user}さん @{props.data.userId}
+        <div className="inline-block_by">
+          <div className="idplt_by">
+            by{props.data.user}さん @{props.data.userId}
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };

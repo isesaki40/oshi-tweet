@@ -53,61 +53,169 @@ export const Form = (props) => {
         style={{
           height: "100%",
           "max-width": "100%",
-          "max-height":"100%",
+          "max-height": "100%",
           "background-color": "white",
           "font-family": "ＭＳ ゴシック",
           "background-color": "rgba(192, 251, 255, 0.26)",
-          "display":"flex",
-          "flex-direction":"column",
-          "justify-content":"center",
-          "align-items":"center",
+          display: "flex",
+          "flex-direction": "column",
+          "justify-content": "center",
+          "align-items": "center",
         }}
         align="center"
       >
         <div
           style={{
-          height: "600px",
-          width: "500px",
-          "border": "0.2em solid #6eaef4",
-          "background-color": "#9DCEEA",
-          "opcity":"0.26",
-          "border-radius":"0.6em",
-          "margin-top":"30px",
-        }}>
-          <p style={{"margin-top":"10px","font-size":"20px",}}>推し活度をチェックする</p>
-          <div style={{"padding-left":"40px","display":"flex","justify-content":"space-around",}}>
-            <div style={{"margin":"10px", "padding-bottom":"10px","font-size":"20px","font-weight":"400","line-height":"1.4","flex-direction":"column",}}>
-              <p style={{"padding-top":"8px",}}>UserID</p>
-              <p style={{"padding-top":"6px",}}>OshiID</p>
-              <p style={{"padding-top":"4px",}}>OshiName</p>
-              <p style={{"padding-top":"2px",}}>Key1</p>
-              <p style={{"padding-top":"0px",}}>Key2</p>
-              <p style={{"padding-top":"2px",}}>Key3</p>
-              <p style={{"padding-top":"2px",}}>Key4</p>
-              <p style={{"padding-top":"2px",}}>Key5</p>
-
+            height: "600px",
+            width: "500px",
+            border: "0.2em solid #6eaef4",
+            "background-color": "#9DCEEA",
+            opcity: "0.26",
+            "border-radius": "0.6em",
+            "margin-top": "30px",
+          }}
+        >
+          <p style={{ "margin-top": "10px", "font-size": "20px" }}>
+            推し活度をチェックする
+          </p>
+          <div
+            style={{
+              "padding-left": "40px",
+              display: "flex",
+              "justify-content": "space-around",
+            }}
+          >
+            <div
+              style={{
+                margin: "10px",
+                "padding-bottom": "10px",
+                "font-size": "20px",
+                "font-weight": "400",
+                "line-height": "1.4",
+                "flex-direction": "column",
+              }}
+            >
+              <p style={{ "padding-top": "8px" }}>UserID</p>
+              <p style={{ "padding-top": "6px" }}>OshiID</p>
+              <p style={{ "padding-top": "4px" }}>OshiName</p>
+              <p style={{ "padding-top": "2px" }}>Key1</p>
+              <p style={{ "padding-top": "0px" }}>Key2</p>
+              <p style={{ "padding-top": "2px" }}>Key3</p>
+              <p style={{ "padding-top": "2px" }}>Key4</p>
+              <p style={{ "padding-top": "2px" }}>Key5</p>
             </div>
-            <div style={{"display":"flex","flex-direction":"column","flex-wrap":"nowrap","margin-top":"20px","width":"270px",}}>
-              <input defaultValue="" placeholder="@watashihoge" {...register("userId")} style={{"border":"1px solid #EEEEEE","border-radius":"4px","height":"50px","margin-top":"2px",}}/>
-              <input defaultValue="" placeholder="@Oshihoge" {...register("oshiId")} style={{"border":"1px solid #EEEEEE","border-radius":"4px","height":"50px","margin-top":"2px",}}/>
-              <input defaultValue="" placeholder="oshihuge" {...register("oshiName")} style={{"border":"1px solid #EEEEEE","border-radius":"4px","height":"50px","margin-top":"2px",}}/>
-              <input defaultValue="" placeholder="hoge1" {...register("key1")} style={{"border":"1px solid #EEEEEE","border-radius":"4px","height":"50px","margin-top":"2px",}}/>
-              <input defaultValue="" placeholder="hoge2" {...register("key2")} style={{"border":"1px solid #EEEEEE","border-radius":"4px","height":"50px","margin-top":"2px",}}/>
-              <input defaultValue="" placeholder="hoge3" {...register("key3")} style={{"border":"1px solid #EEEEEE","border-radius":"4px","height":"50px","margin-top":"2px",}}/>
-              <input defaultValue="" placeholder="hoge4" {...register("key4")} style={{"border":"1px solid #EEEEEE","border-radius":"4px","height":"50px","margin-top":"2px",}}/>
-              <input defaultValue="" placeholder="hoge5" {...register("key5")} style={{"border":"1px solid #EEEEEE","border-radius":"4px","height":"50px","margin-top":"2px",}}/>
+            <div
+              style={{
+                display: "flex",
+                "flex-direction": "column",
+                "flex-wrap": "nowrap",
+                "margin-top": "20px",
+                width: "270px",
+              }}
+            >
+              <input
+                defaultValue=""
+                placeholder="@watashihoge"
+                {...register("userId")}
+                style={{
+                  border: "1px solid #EEEEEE",
+                  "border-radius": "4px",
+                  height: "50px",
+                  "margin-top": "2px",
+                }}
+              />
+              <input
+                defaultValue=""
+                placeholder="@Oshihoge"
+                {...register("oshiId")}
+                style={{
+                  border: "1px solid #EEEEEE",
+                  "border-radius": "4px",
+                  height: "50px",
+                  "margin-top": "2px",
+                }}
+              />
+              <input
+                defaultValue=""
+                placeholder="oshihuge"
+                {...register("oshiName")}
+                style={{
+                  border: "1px solid #EEEEEE",
+                  "border-radius": "4px",
+                  height: "50px",
+                  "margin-top": "2px",
+                }}
+              />
+              <input
+                defaultValue=""
+                placeholder="hoge1"
+                {...register("key1")}
+                style={{
+                  border: "1px solid #EEEEEE",
+                  "border-radius": "4px",
+                  height: "50px",
+                  "margin-top": "2px",
+                }}
+              />
+              <input
+                defaultValue=""
+                placeholder="hoge2"
+                {...register("key2")}
+                style={{
+                  border: "1px solid #EEEEEE",
+                  "border-radius": "4px",
+                  height: "50px",
+                  "margin-top": "2px",
+                }}
+              />
+              <input
+                defaultValue=""
+                placeholder="hoge3"
+                {...register("key3")}
+                style={{
+                  border: "1px solid #EEEEEE",
+                  "border-radius": "4px",
+                  height: "50px",
+                  "margin-top": "2px",
+                }}
+              />
+              <input
+                defaultValue=""
+                placeholder="hoge4"
+                {...register("key4")}
+                style={{
+                  border: "1px solid #EEEEEE",
+                  "border-radius": "4px",
+                  height: "50px",
+                  "margin-top": "2px",
+                }}
+              />
+              <input
+                defaultValue=""
+                placeholder="hoge5"
+                {...register("key5")}
+                style={{
+                  border: "1px solid #EEEEEE",
+                  "border-radius": "4px",
+                  height: "50px",
+                  "margin-top": "2px",
+                }}
+              />
             </div>
           </div>
-          <input type="submit" value="check" style={{
-            "height":"30px",
-            "width":"160px",
-            "margin-top":"30px",
-            "color": "white",
-            "display": "flex",
-            "background-color":"blue",
-            "justify-content": "center",
-            "position": "relative",
-            "border-radius":"0.3em",
+          <input
+            type="submit"
+            value="check"
+            style={{
+              height: "30px",
+              width: "160px",
+              "margin-top": "30px",
+              color: "white",
+              display: "flex",
+              "background-color": "blue",
+              "justify-content": "center",
+              position: "relative",
+              "border-radius": "0.3em",
             }}
           />
         </div>
