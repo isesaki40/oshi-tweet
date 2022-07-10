@@ -44,53 +44,41 @@ export const Result = (props) => {
       </div>
 
       <div className="inline-block_coin">
-        {/* <div class="flexbox flexbox-right"> */}
-        <div class="box flipLeft1">
-          <div className="image_cut_first"></div>
-        </div>
-        <div class="box flipLeft5">
-          <div className="image_cut"></div>
-        </div>
-        <div class="box flipLeft9">
-          <div className="image_cut_last"></div>
-        </div>
+      {/* <div class="flexbox flexbox-right"> */}
+      <div class="box flipLeft1">{countHund>=1 && <div className="image_cut_first"></div>}</div>
+      <div class="box flipLeft5">{countHund>=5 && <div className="image_cut"></div>}</div>
+      <div class="box flipLeft9">{countHund>=9 && <div className="image_cut_last"></div>}
+
+       
+      </div>
       </div>
 
       <div className="inline-block_coin_second">
-        {/* <div class="flexbox flexbox-right"> */}
-        <div class="box flipLeft2">
-          <div className="image_cut_first"></div>
-        </div>
-        <div class="box flipLeft6">
-          <div className="image_cut"></div>
-        </div>
-        <div class="box flipLeft10">
-          <div className="image_cut_last"></div>
-        </div>
+      {/* <div class="flexbox flexbox-right"> */}
+      <div class="box flipLeft2">{countHund>=2 && <div className="image_cut_first"></div>}</div>
+      <div class="box flipLeft6">{countHund>=6 && <div className="image_cut"></div>}</div>
+      <div class="box flipLeft10">{countHund>=10 && <div className="image_cut_last"></div>}
+      
+
+       
+      </div>
       </div>
 
       <div className="inline-block_coin_second">
-        {/* <div class="flexbox flexbox-right"> */}
-        <div class="box flipLeft3">
-          <div className="image_cut_first"></div>
-        </div>
-        <div class="box flipLeft7">
-          <div className="image_cut"></div>
-        </div>
-        <div class="box flipLeft11">
-          <div className="image_cut_last"></div>
-        </div>
+      {/* <div class="flexbox flexbox-right"> */}
+      <div class="box flipLeft3">{countHund>=3 && <div className="image_cut_first"></div>}</div>
+      <div class="box flipLeft7">{countHund>=7 && <div className="image_cut"></div>}</div>
+      <div class="box flipLeft11">{countHund>=11 && <div className="image_cut_last"></div>}
+
+       
+      </div>
       </div>
 
       <div className="inline-block_coin_second">
-        {/* <div class="flexbox flexbox-right"> */}
-        <div class="box flipLeft4">
-          <div className="image_cut_first"></div>
-        </div>
-        <div class="box flipLeft8">
-          <div className="image_cut"></div>
-        </div>
-        {/* <div class="box flipLeft11"><div className="image_cut_last"></div> */}
+      {/* <div class="flexbox flexbox-right"> */}
+      <div class="box flipLeft4">{countHund>=4 && <div className="image_cut_first"></div>}</div>
+      <div class="box flipLeft8">{countHund>=8 && <div className="image_cut"></div>}</div>
+      {/* <div class="box flipLeft11"><div className="image_cut_last"></div> */}
 
         {/* </div> */}
       </div>
