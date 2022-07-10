@@ -12,7 +12,11 @@ export const Form = (props) => {
     const searchCount = async (input) => {
       try {
         const count = await getSearchCount(
-          `from:${input.userId} ${input.key1} ${input.key2} ${input.key3} ${input.key4} ${input.key5}`
+          `from:${input.userId} (${input.key1 ? `${input.key1}` : ""} ${
+            input.key2 ? `OR ${input.key2}` : ""
+          } ${input.key3 ? `OR ${input.key3}` : ""} ${
+            input.key4 ? `OR ${input.key4}` : ""
+          } ${input.key5 ? `OR ${input.key5}` : ""})`
         );
         const img = await getImgUrl(input.oshiId);
         const user = await getImgUrl(input.userId);
