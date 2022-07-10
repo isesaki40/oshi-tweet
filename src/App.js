@@ -4,6 +4,7 @@ import { Result } from "./components/Result";
 import image from "./components/image/test.png";
 import { Route, Routes } from "react-router-dom";
 
+
 function App() {
   return (
     <div>
