@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 // import { getTest } from "../apis/getTest";
 
@@ -124,9 +125,9 @@ export const Result = (props) => {
 
       <div class="ajs">
         <div className="inline-block_btn">
-          <a href="" class="btn btn--orange btn--radius ">
+          <Link to="/" className="btn btn--orange btn--radius">
             前のページへ
-          </a>
+          </Link>
         </div>
 
         <div className="inline-block_by">
