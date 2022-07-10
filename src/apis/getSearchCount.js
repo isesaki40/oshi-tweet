@@ -1,9 +1,9 @@
 import axios from "axios";
-import { search } from "../urls";
+import { countSearch } from "../urls";
 
-export const getSearch = (q) =>
+export const getSearchCount = (q) =>
   axios
-    .get(search, {
+    .get(countSearch, {
       params: { query: q },
       headers: {
         Authorization: `Bearer ${process.env.REACT_APP_BEARER_TOKEN}`,

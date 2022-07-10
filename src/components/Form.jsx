@@ -1,10 +1,28 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { getSearchCount } from "../apis/getSearchCount";
 
-export const Form = () => {
+export const Form = (props) => {
   const { register, handleSubmit, watch } = useForm();
-  const onSubmit = (data) => console.log("onSubmit:", data);
-  console.log("watch:", watch("example")); // watchは引数に渡した名前の入力値を監視する
+
+  let navigate = useNavigate();
+  const onSubmit = (input) => {
+    const searchCount = async (input) => {
+      try {
+        const count = await getSearchCount(
+          `from:${input.oshiName} ${input.key}`
+        );
+        props.handleCountState(count);
+        props.handleFormState(input);
+        navigate("../result", { replace: true });
+      } catch (e) {
+        console.error("Error: ", e);
+      }
+    };
+    searchCount(input);
+  };
+  console.log("watch:", watch("oshiName")); // watchは引数に渡した名前の入力値を監視する
   /*
   var date = new Date();
   var yyyy = date.getFullYear();
@@ -33,6 +51,8 @@ export const Form = () => {
           placeholder="木村　拓也"
           {...register("oshiName")}
         />
+        <br></br>
+        <input defaultValue="" {...register("key")} />
         <br></br>
         <br></br>
         検索期間
