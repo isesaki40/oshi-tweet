@@ -37,8 +37,8 @@
   }
 }
 
-body {
-  background-color: aqua;
+.bkcolor{
+  background-color: #00ffff;
 }
 
 
@@ -210,7 +210,36 @@ animation-iteration-count: 2;/*この数字を必要回数分に変更*/
   margin-bottom: 20px;
   background-position: center;
   background-image: url("./components/image/test.png");
+  border: solid;
+  border: 3px solid;
+  border-color: #000;
   /* background: linear-gradient(to right bottom, #c71585, #ffc0cb); */
+}
+
+.text100{
+  font-size: 52px;
+  font-weight: bold;
+  margin-top: 36px;
+  margin-left: 32px;
+  margin-right: 1%;
+  position: absolute;/*絶対配置*/
+  
+  top: 0;
+  left: 0;
+
+}
+
+.text1000{
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 39px;
+  margin-left: 18px;
+  
+  position: absolute;/*絶対配置*/
+  
+  top: 0;
+  left: 0;
+
 }
 
 .image_cut_first {
@@ -223,6 +252,9 @@ animation-iteration-count: 2;/*この数字を必要回数分に変更*/
   margin-top: 40px;
   margin-bottom: 20px;
   background-position: center;
+  border: solid;
+  border: 3px solid;
+  border-color: #000;
   background-image: url("./components/image/test.png");
   /* background: linear-gradient(to right bottom, #c71585, #ffc0cb); */
 }
@@ -237,6 +269,9 @@ animation-iteration-count: 2;/*この数字を必要回数分に変更*/
   margin-top: 3px;
   margin-bottom: 1px;
   background-position: center;
+  border: solid;
+  border: 3px solid;
+  border-color: #000;
   background-image: url("./components/image/test.png");
   /* background: linear-gradient(to right bottom, #c71585, #ffc0cb); */
 }
@@ -284,6 +319,10 @@ animation-iteration-count: 2;/*この数字を必要回数分に変更*/
               
 }
 
+.ajs{
+  height: 1000px;
+}
+
 
 
 img.example1 {
@@ -303,6 +342,7 @@ a.btn--orange {
   width: 200px;
   height: 50px;
   margin-top: 1px;
+  
   transition: background .15s ease,
               color .15s ease;
 }
@@ -489,14 +529,11 @@ button.btn {
     }
   }
 
-  .box{
-    width: 0px;
-    padding: 0px;
-    margin:0px 0px 0px 0px;
-    background: #666;
-    color: #fff;
-    box-sizing:border-box;
+  .example1{
+    position: relative;/*相対配置*/
   }
+
+ 
   
 
  
